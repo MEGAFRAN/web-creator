@@ -1,7 +1,7 @@
 "use client";
 
 const alignMap = { left: "text-left", center: "text-center", right: "text-right" };
-const colorMap = { default: "text-gray-900", muted: "text-gray-500", white: "text-white" };
+const colorMap = { default: "text-foreground", muted: "text-muted", white: "text-primary-fg" };
 const sizeMap = { h1: "text-4xl font-bold", h2: "text-3xl font-bold", h3: "text-2xl font-semibold", h4: "text-xl font-semibold" };
 
 export function Heading({

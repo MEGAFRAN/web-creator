@@ -7,24 +7,24 @@ interface TableProps {
 export function Table({ columns, rows, striped }: TableProps) {
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
+      <table className="min-w-full divide-y divide-border">
         <thead>
           <tr>
             {columns?.map((col, i) => (
               <th
                 key={i}
-                className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"
+                className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted"
               >
                 {col}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-border">
           {rows?.map((row, i) => (
-            <tr key={i} className={striped && i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+            <tr key={i} className={striped && i % 2 === 0 ? "bg-muted-bg" : "bg-background"}>
               {row.map((cell, j) => (
-                <td key={j} className="px-4 py-3 text-sm text-gray-700">
+                <td key={j} className="px-4 py-3 text-sm text-foreground">
                   {cell}
                 </td>
               ))}

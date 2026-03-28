@@ -10,6 +10,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Semantic theme tokens — driven by CSS vars injected from lib/theme.json */
+  --color-primary: var(--theme-primary);
+  --color-primary-fg: var(--theme-primaryFg);
+  --color-muted: var(--theme-muted);
+  --color-muted-bg: var(--theme-mutedBg);
+  --color-border: var(--theme-border);
+  --color-destructive: var(--theme-destructive);
+  --color-destructive-fg: var(--theme-destructiveFg);
+  --radius-sm: var(--theme-radius-sm);
+  --radius-md: var(--theme-radius-md);
+  --radius-lg: var(--theme-radius-lg);
 }
 
 @media (prefers-color-scheme: dark) {

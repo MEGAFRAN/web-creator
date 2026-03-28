@@ -23,36 +23,36 @@ export function PricingTable({ title, subtitle, tiers, onPress }: PricingTablePr
     <div className="w-full px-6 py-16">
       <div className="mx-auto max-w-5xl">
         {title && (
-          <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">{title}</h2>
+          <h2 className="mb-4 text-center text-3xl font-bold text-foreground">{title}</h2>
         )}
         {subtitle && (
-          <p className="mb-12 text-center text-lg text-gray-600">{subtitle}</p>
+          <p className="mb-12 text-center text-lg text-muted">{subtitle}</p>
         )}
         <div className={`grid ${gridCols} gap-8`}>
           {tiers?.map((tier, i) => (
             <div
               key={i}
               className={`flex flex-col rounded-xl border p-8 ${
-                tier.highlighted ? "border-gray-900 shadow-lg" : "border-gray-200"
+                tier.highlighted ? "border-primary shadow-lg" : "border-border"
               }`}
             >
               {tier.highlighted && (
-                <span className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                <span className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">
                   Recommended
                 </span>
               )}
-              <h3 className="text-xl font-bold text-gray-900">{tier.name}</h3>
+              <h3 className="text-xl font-bold text-foreground">{tier.name}</h3>
               <div className="mb-2 mt-4">
-                <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
-                {tier.period && <span className="ml-1 text-gray-500">{tier.period}</span>}
+                <span className="text-4xl font-bold text-foreground">{tier.price}</span>
+                {tier.period && <span className="ml-1 text-muted">{tier.period}</span>}
               </div>
               {tier.description && (
-                <p className="mb-6 text-gray-600">{tier.description}</p>
+                <p className="mb-6 text-muted">{tier.description}</p>
               )}
               <ul className="mb-8 flex-1 space-y-3">
                 {tier.features?.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="mt-0.5 text-gray-400">✓</span>
+                  <li key={j} className="flex items-start gap-2 text-sm text-foreground">
+                    <span className="mt-0.5 text-muted">✓</span>
                     {feature}
                   </li>
                 ))}
@@ -61,8 +61,8 @@ export function PricingTable({ title, subtitle, tiers, onPress }: PricingTablePr
                 onClick={onPress}
                 className={`w-full rounded-md px-4 py-2.5 text-sm font-medium transition-colors ${
                   tier.highlighted
-                    ? "bg-gray-900 text-white hover:bg-gray-700"
-                    : "border border-gray-300 text-gray-700 hover:bg-gray-50"
+                    ? "bg-primary text-primary-fg hover:opacity-90"
+                    : "border border-border text-foreground hover:bg-muted-bg"
                 }`}
               >
                 {tier.ctaLabel}

@@ -25,7 +25,7 @@ export function Avatar({ src, name, size }: AvatarProps) {
   }
 
   return (
-    <div className={`${sizeClass} flex items-center justify-center rounded-full bg-gray-200 font-medium text-gray-600`}>
+    <div className={`${sizeClass} flex items-center justify-center rounded-full bg-muted-bg font-medium text-muted`}>
       {initials}
     </div>
   );

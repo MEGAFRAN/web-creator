@@ -1,19 +1,19 @@
 const bgMap: Record<string, string> = {
-  white: "bg-white",
-  gray: "bg-gray-50",
-  dark: "bg-gray-900",
+  white: "bg-background",
+  gray: "bg-muted-bg",
+  dark: "bg-primary",
 };
 
 const valueColorMap: Record<string, string> = {
-  white: "text-gray-900",
-  gray: "text-gray-900",
-  dark: "text-white",
+  white: "text-foreground",
+  gray: "text-foreground",
+  dark: "text-primary-fg",
 };
 
 const labelColorMap: Record<string, string> = {
-  white: "text-gray-500",
-  gray: "text-gray-500",
-  dark: "text-gray-400",
+  white: "text-muted",
+  gray: "text-muted",
+  dark: "text-primary-fg/70",
 };
 
 const colsMap: Record<number, string> = {
@@ -32,15 +32,15 @@ export function StatsBar({ stats, background }: StatsBarProps) {
   const bg = background ?? "white";
   const colCount = Math.min(stats?.length ?? 0, 4);
   return (
-    <div className={`w-full px-6 py-12 ${bgMap[bg] ?? "bg-white"}`}>
+    <div className={`w-full px-6 py-12 ${bgMap[bg] ?? "bg-background"}`}>
       <div className="mx-auto max-w-6xl">
         <dl className={`grid ${colsMap[colCount] ?? "grid-cols-4"} gap-8 text-center`}>
           {stats?.map((stat, i) => (
             <div key={i}>
-              <dt className={`text-4xl font-bold ${valueColorMap[bg] ?? "text-gray-900"}`}>
+              <dt className={`text-4xl font-bold ${valueColorMap[bg] ?? "text-foreground"}`}>
                 {stat.value}
               </dt>
-              <dd className={`mt-2 text-sm ${labelColorMap[bg] ?? "text-gray-500"}`}>
+              <dd className={`mt-2 text-sm ${labelColorMap[bg] ?? "text-muted"}`}>
                 {stat.label}
               </dd>
             </div>

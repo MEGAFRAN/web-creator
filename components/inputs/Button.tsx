@@ -1,8 +1,8 @@
 const variantMap: Record<string, string> = {
-  primary: "bg-gray-900 text-white hover:bg-gray-700",
-  secondary: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-50",
-  ghost: "text-gray-700 hover:bg-gray-100",
-  destructive: "bg-red-600 text-white hover:bg-red-700",
+  primary: "bg-primary text-primary-fg hover:opacity-90",
+  secondary: "border border-border bg-background text-foreground hover:bg-muted-bg",
+  ghost: "text-foreground hover:bg-muted-bg",
+  destructive: "bg-destructive text-destructive-fg hover:opacity-90",
 };
 
 const sizeMap: Record<string, string> = {
@@ -20,7 +20,7 @@ interface ButtonProps {
 }
 
 export function Button({ label, variant, size, disabled, onClick }: ButtonProps) {
-  const variantClass = variantMap[variant ?? "primary"] ?? "bg-gray-900 text-white hover:bg-gray-700";
+  const variantClass = variantMap[variant ?? "primary"] ?? "bg-primary text-primary-fg hover:opacity-90";
   const sizeClass = sizeMap[size ?? "md"] ?? "px-4 py-2 text-sm";
   return (
     <button

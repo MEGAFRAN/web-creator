@@ -14,9 +14,9 @@ export function Checkbox({ label, checked: initialChecked }: CheckboxProps) {
         type="checkbox"
         checked={checked}
         onChange={(e) => setChecked(e.target.checked)}
-        className="rounded border-gray-300 text-gray-900 focus:ring-gray-900"
+        className="rounded border-border text-primary focus:ring-primary"
       />
-      <span className="text-sm text-gray-700">{label}</span>
+      <span className="text-sm text-foreground">{label}</span>
     </label>
   );
 }

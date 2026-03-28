@@ -8,7 +8,7 @@ export function LogoCloud({ title, logos }: LogoCloudProps) {
     <div className="w-full px-6 py-12">
       <div className="mx-auto max-w-6xl">
         {title && (
-          <p className="mb-8 text-center text-sm text-gray-500">{title}</p>
+          <p className="mb-8 text-center text-sm text-muted">{title}</p>
         )}
         <div className="flex flex-wrap items-center justify-center gap-8">
           {logos?.map((logo, i) =>
@@ -21,7 +21,7 @@ export function LogoCloud({ title, logos }: LogoCloudProps) {
                 className="h-8 object-contain grayscale opacity-60 transition-opacity hover:opacity-100"
               />
             ) : (
-              <span key={i} className="text-sm font-semibold text-gray-400">
+              <span key={i} className="text-sm font-semibold text-muted">
                 {logo.name ?? logo.alt}
               </span>
             )

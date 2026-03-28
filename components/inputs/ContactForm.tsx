@@ -10,7 +10,7 @@ interface ContactFormProps {
 }
 
 const fieldClass =
-  "rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-900";
+  "rounded-md border border-border px-3 py-2 text-sm text-foreground placeholder-muted bg-background focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary";
 
 export function ContactForm({ submitLabel, nameLabel, emailLabel, messageLabel, onSubmit }: ContactFormProps) {
   const [name, setName] = useState("");
@@ -25,7 +25,7 @@ export function ContactForm({ submitLabel, nameLabel, emailLabel, messageLabel, 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-700">
+        <label className="text-sm font-medium text-foreground">
           {nameLabel ?? "Name"}
         </label>
         <input
@@ -36,7 +36,7 @@ export function ContactForm({ submitLabel, nameLabel, emailLabel, messageLabel, 
         />
       </div>
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-700">
+        <label className="text-sm font-medium text-foreground">
           {emailLabel ?? "Email"}
         </label>
         <input
@@ -47,7 +47,7 @@ export function ContactForm({ submitLabel, nameLabel, emailLabel, messageLabel, 
         />
       </div>
       <div className="flex flex-col gap-1.5">
-        <label className="text-sm font-medium text-gray-700">
+        <label className="text-sm font-medium text-foreground">
           {messageLabel ?? "Message"}
         </label>
         <textarea
@@ -59,7 +59,7 @@ export function ContactForm({ submitLabel, nameLabel, emailLabel, messageLabel, 
       </div>
       <button
         type="submit"
-        className="rounded-md bg-gray-900 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-700"
+        className="rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-fg transition-colors hover:opacity-90"
       >
         {submitLabel ?? "Send Message"}
       </button>

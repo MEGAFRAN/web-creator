@@ -19,16 +19,16 @@ export function Card({ title, description, footer, padding, border, children }: 
   const paddingClass = paddingMap[padding ?? "md"] ?? "p-6";
   const showBorder = border !== false;
   return (
-    <div className={`rounded-xl bg-white ${showBorder ? "border border-gray-200" : ""} ${paddingClass}`}>
+    <div className={`rounded-lg bg-background ${showBorder ? "border border-border" : ""} ${paddingClass}`}>
       {title && (
-        <h3 className="mb-2 text-lg font-semibold text-gray-900">{title}</h3>
+        <h3 className="mb-2 text-lg font-semibold text-foreground">{title}</h3>
       )}
       {description && (
-        <p className="mb-4 text-gray-600">{description}</p>
+        <p className="mb-4 text-muted">{description}</p>
       )}
       {children}
       {footer && (
-        <p className="mt-4 border-t border-gray-200 pt-4 text-sm text-gray-500">
+        <p className="mt-4 border-t border-border pt-4 text-sm text-muted">
           {footer}
         </p>
       )}

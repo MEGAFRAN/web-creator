@@ -10,8 +10,8 @@ export function NavLink({ label, href, active }: NavLinkProps) {
       href={href}
       className={`text-sm transition-colors ${
         active
-          ? "font-medium text-gray-900"
-          : "text-gray-600 hover:text-gray-900"
+          ? "font-medium text-foreground"
+          : "text-muted hover:text-foreground"
       }`}
     >
       {label}

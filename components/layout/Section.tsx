@@ -1,7 +1,11 @@
 "use client";
 import { ReactNode } from "react";
 
-const bgMap = { white: "bg-white", gray: "bg-gray-50", dark: "bg-gray-900" };
+const bgMap = {
+  white: "bg-background",
+  gray: "bg-muted-bg",
+  dark: "bg-primary",
+};
 const pyMap = { none: "", sm: "py-8", md: "py-12", lg: "py-20", xl: "py-28" };
 
 export function Section({

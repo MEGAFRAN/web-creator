@@ -1,3 +1,3 @@
 export function Divider() {
-  return <hr className="border-gray-200 my-8" />;
+  return <hr className="border-border my-8" />;
 }
