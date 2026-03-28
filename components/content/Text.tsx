@@ -1,0 +1,26 @@
+"use client";
+
+const sizeMap = { sm: "text-sm", base: "text-base", lg: "text-lg", xl: "text-xl" };
+const colorMap = { default: "text-gray-700", muted: "text-gray-500", white: "text-white" };
+const weightMap = { normal: "font-normal", medium: "font-medium", semibold: "font-semibold" };
+const alignMap = { left: "text-left", center: "text-center", right: "text-right" };
+
+export function Text({
+  content,
+  size = "base",
+  color = "default",
+  weight = "normal",
+  align = "left",
+}: {
+  content: string;
+  size?: "sm" | "base" | "lg" | "xl" | null;
+  color?: "default" | "muted" | "white" | null;
+  weight?: "normal" | "medium" | "semibold" | null;
+  align?: "left" | "center" | "right" | null;
+}) {
+  return (
+    <p className={`${sizeMap[size ?? "base"]} ${colorMap[color ?? "default"]} ${weightMap[weight ?? "normal"]} ${alignMap[align ?? "left"]}`}>
+      {content}
+    </p>
+  );
+}
