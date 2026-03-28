@@ -65,33 +65,38 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <Navbar
-          logo="Acme"
+          logo="Alex Morgan"
           links={[
-            { label: "Home", href: "/" },
-            { label: "About", href: "/about" },
-            { label: "Contact", href: "/contact" },
+            { label: "Services", href: "services" },
+            { label: "Work", href: "work" },
+            { label: "About", href: "about" },
+            { label: "Contact", href: "contact" },
           ]}
-          ctaLabel="Get Started"
+          ctaLabel="Hire Me"
         />
         <main className="flex-1">{children}</main>
         <Footer
           columns={[
             {
-              title: "Company",
+              title: "Navigation",
               links: [
-                { label: "About", href: "/about" },
-                { label: "Contact", href: "/contact" },
+                { label: "Services", href: "services" },
+                { label: "Work", href: "work" },
+                { label: "About", href: "about" },
+                { label: "Contact", href: "contact" },
               ],
             },
             {
-              title: "Legal",
+              title: "Connect",
               links: [
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms of Service", href: "/terms" },
+                { label: "GitHub", href: "https://github.com" },
+                { label: "LinkedIn", href: "https://linkedin.com" },
+                { label: "Twitter / X", href: "https://x.com" },
+                { label: "Resume (PDF)", href: "/resume.pdf" },
               ],
             },
           ]}
-          copyright="© 2026 Acme. All rights reserved."
+          copyright="© 2026 Alex Morgan. All rights reserved."
         />
       </body>
     </html>

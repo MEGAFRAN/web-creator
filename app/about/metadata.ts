@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Contact",
+  title: "About",
   description:
-    "Get in touch with Alex Morgan. Available for freelance projects, consulting, and full-time opportunities.",
+    "Learn about Alex Morgan — full-stack web developer, open-source contributor, and occasional conference speaker based in San Francisco.",
 });

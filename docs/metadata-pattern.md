@@ -20,6 +20,17 @@ override. Fields that are not overridden automatically inherit the site defaults
 
 ---
 
+Rule: Always define page metadata in a separate `metadata.ts` file co-located with the page (e.g. `app/services/metadata.ts`), never inline in `page.tsx`. The pattern is:
+
+  ```ts
+     import type { Metadata } from "next";
+     import { generatePageMetadata } from "@/lib/metadata";
+     export const metadata: Metadata = generatePageMetadata({ title: "...", description: "..." });
+  ```
+  The `page.tsx` file must NOT contain any `metadata` export or related imports.
+
+---
+
 ## Full Example — a new Pricing page
 
 ```ts

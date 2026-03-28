@@ -1,65 +1,128 @@
-import Image from "next/image";
+import { Hero } from "@/components/sections/Hero";
+import { StatsBar } from "@/components/sections/StatsBar";
+import { FeatureGrid } from "@/components/sections/FeatureGrid";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { CTA } from "@/components/sections/CTA";
+import { LogoCloud } from "@/components/sections/LogoCloud";
+import { Section } from "@/components/layout/Section";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Section background="white" paddingY="xl">
+        <Hero
+          headline="I build web apps people love to use."
+          subtext="Full-stack developer specialising in React, Next.js, and Node.js. I turn complex problems into clean, scalable products — on time and on budget."
+          ctaLabel="View My Work"
+          secondaryLabel="Get In Touch"
+          align="center"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </Section>
+
+      <StatsBar
+        background="gray"
+        stats={[
+          { value: "50+", label: "Projects delivered" },
+          { value: "8 yrs", label: "Industry experience" },
+          { value: "30+", label: "Happy clients" },
+          { value: "99%", label: "On-time delivery" },
+        ]}
+      />
+
+      <FeatureGrid
+        title="What I bring to every project"
+        subtitle="From idea to deployment, I cover the full stack so you get one accountable partner instead of juggling multiple contractors."
+        cols="3"
+        features={[
+          {
+            icon: "⚡",
+            title: "Performance-first development",
+            description:
+              "Every line of code is written with speed in mind. Core Web Vitals scores in the green, every time.",
+          },
+          {
+            icon: "♿",
+            title: "Accessible by default",
+            description:
+              "WCAG 2.1 AA compliance baked in from the start — not bolted on as an afterthought.",
+          },
+          {
+            icon: "📱",
+            title: "Responsive & mobile-ready",
+            description:
+              "Pixel-perfect on every screen size, from a 320 px phone to a 4 K desktop.",
+          },
+          {
+            icon: "🔒",
+            title: "Secure & production-hardened",
+            description:
+              "Auth, data validation, and dependency audits are standard practice, not optional extras.",
+          },
+          {
+            icon: "🔗",
+            title: "API & integration expertise",
+            description:
+              "REST, GraphQL, webhooks — I connect your product to the third-party services you depend on.",
+          },
+          {
+            icon: "🚀",
+            title: "CI/CD & cloud deployment",
+            description:
+              "Automated pipelines on Vercel, AWS, or GCP so shipping new features takes minutes, not days.",
+          },
+        ]}
+      />
+
+      <LogoCloud
+        title="Technologies I work with every day"
+        logos={[
+          { alt: "React", name: "React" },
+          { alt: "Next.js", name: "Next.js" },
+          { alt: "TypeScript", name: "TypeScript" },
+          { alt: "Node.js", name: "Node.js" },
+          { alt: "PostgreSQL", name: "PostgreSQL" },
+          { alt: "Tailwind CSS", name: "Tailwind CSS" },
+          { alt: "AWS", name: "AWS" },
+          { alt: "Vercel", name: "Vercel" },
+        ]}
+      />
+
+      <Testimonials
+        title="What clients say"
+        testimonials={[
+          {
+            quote:
+              "Alex took our rough idea and delivered a polished product in six weeks. The codebase is clean, well-documented, and easy for our in-house team to maintain.",
+            author: "Sarah Chen",
+            role: "CTO, Launchpad Analytics",
+          },
+          {
+            quote:
+              "The new site loads in under a second and our conversion rate jumped 22 % within a month. Exactly what we asked for — and more.",
+            author: "Marcus Webb",
+            role: "Founder, Bloom Commerce",
+          },
+          {
+            quote:
+              "Professional, communicative, and technically excellent. We've worked with Alex on three projects now and will keep coming back.",
+            author: "Priya Nair",
+            role: "Head of Product, Stackwise",
+          },
+          {
+            quote:
+              "Alex spotted architectural issues we hadn't even considered and fixed them proactively. That kind of ownership is rare.",
+            author: "Daniel Reeves",
+            role: "VP Engineering, Meridian Health",
+          },
+        ]}
+      />
+
+      <CTA
+        headline="Ready to build something great?"
+        subtext="I'm currently accepting new projects. Let's talk about what you're trying to create."
+        ctaLabel="Start a Conversation"
+        background="dark"
+      />
+    </>
   );
 }
