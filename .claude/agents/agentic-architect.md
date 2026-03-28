@@ -93,7 +93,7 @@ Include:
 
 1. Role statement (1-2 sentences)
 2. What it receives as input
-3. Its process (numbered steps)
+3. Specific use cases (numbered steps)
 4. Output specification (format, length, structure)
 5. Edge cases and how to handle them
 6. What NOT to do

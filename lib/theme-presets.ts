@@ -124,9 +124,73 @@ export const professional: Theme = {
   },
 };
 
+export const warmEarth: Theme = {
+  colors: {
+    primary: "#c2500f",
+    primaryFg: "#ffffff",
+    background: "#faf7f2",
+    foreground: "#2c1f14",
+    muted: "#8c7b6b",
+    mutedBg: "#f0e8de",
+    border: "#d9cec3",
+    destructive: "#b91c1c",
+    destructiveFg: "#ffffff",
+  },
+  typography: {
+    fontFamily: "Georgia, 'Times New Roman', serif",
+    fontSizeBase: "1rem",
+    fontWeightHeading: "700",
+    fontWeightBody: "400",
+    lineHeightBase: "1.65",
+  },
+  spacing: {
+    containerMaxWidth: "68rem",
+    sectionPaddingY: "6rem",
+  },
+  borderRadius: {
+    sm: "0.25rem",
+    md: "0.5rem",
+    lg: "1rem",
+    full: "9999px",
+  },
+};
+
+export const midnightJewel: Theme = {
+  colors: {
+    primary: "#10b981",
+    primaryFg: "#ffffff",
+    background: "#0d1117",
+    foreground: "#e8edf2",
+    muted: "#6b7f94",
+    mutedBg: "#161d27",
+    border: "#253144",
+    destructive: "#f87171",
+    destructiveFg: "#1a0a0a",
+  },
+  typography: {
+    fontFamily: "var(--font-geist-sans), Inter, 'DM Sans', sans-serif",
+    fontSizeBase: "1rem",
+    fontWeightHeading: "600",
+    fontWeightBody: "400",
+    lineHeightBase: "1.6",
+  },
+  spacing: {
+    containerMaxWidth: "80rem",
+    sectionPaddingY: "5rem",
+  },
+  borderRadius: {
+    sm: "0.375rem",
+    md: "0.5rem",
+    lg: "1.25rem",
+    full: "9999px",
+  },
+};
+
 export const presets: Record<string, Theme> = {
   minimalist,
   modern,
   yellowBlack,
   professional,
+  warmEarth,
+  midnightJewel,
 };

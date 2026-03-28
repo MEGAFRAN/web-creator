@@ -16,7 +16,7 @@ The project uses Next.js App Router with TypeScript and Tailwind CSS. The UI com
 
 Import paths use the `@/` alias (e.g., `import { Hero } from "@/components/sections/Hero"`).
 
-## Process bases on Use Cases
+## Use Cases
 
 1. Do you need to create or update components? If No, continue to use case 2, if yes read the following files: components/registry.ts
 2. Do you need to create or update a page? If No, continue to use case 3, if yes read the following files: app/layout.tsx, app/page.tsx, docs/metadata-pattern.md
