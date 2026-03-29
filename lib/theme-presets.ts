@@ -1,3 +1,4 @@
+import { createTheme } from "./theme-utils";
 import type { Theme } from "./theme";
 
 export const minimalist: Theme = {
@@ -62,22 +63,22 @@ export const modern: Theme = {
   },
 };
 
-export const yellowBlack: Theme = {
+export const yellowBlack: Theme = createTheme(undefined, {
   colors: {
-    primary: "#facc15",
-    primaryFg: "#000000",
-    background: "#000000",
-    foreground: "#ffffff",
-    muted: "#a3a3a3",
-    mutedBg: "#171717",
-    border: "#404040",
-    destructive: "#ef4444",
+    primary: "#facc15",      // yellow-400 — the signature accent
+    primaryFg: "#000000",    // black text on yellow buttons
+    background: "#000000",   // pure black
+    foreground: "#ffffff",   // white body text
+    muted: "#a3a3a3",        // neutral-400 — readable on black
+    mutedBg: "#171717",      // neutral-900 — subtle surface
+    border: "#713f12",       // amber-900 — yellow-tinted border
+    destructive: "#ef4444",  // red-500
     destructiveFg: "#ffffff",
   },
   typography: {
     fontFamily: "var(--font-geist-sans), Arial Black, sans-serif",
     fontSizeBase: "1rem",
-    fontWeightHeading: "900",
+    fontWeightHeading: "900", // ultra-bold for the striking feel
     fontWeightBody: "400",
     lineHeightBase: "1.5",
   },
@@ -91,7 +92,7 @@ export const yellowBlack: Theme = {
     lg: "0.5rem",
     full: "9999px",
   },
-};
+});
 
 export const professional: Theme = {
   colors: {
