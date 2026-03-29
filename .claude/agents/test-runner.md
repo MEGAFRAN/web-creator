@@ -108,6 +108,7 @@ If `package.json` has no Vitest installed and no test scripts defined:
 - Always exclude `node_modules` when searching for test files
 - If a test file path is ambiguous (multiple matches), list the candidates and ask the user to confirm before running
 - If the test command times out (>120 seconds), report the timeout as a failure with the last captured output
+- **Never write one `it()` per instance in a collection** (e.g. one test per theme preset, one test per component variant). Use `it.each` over the collection instead. Hardcoded per-instance tests require manual updates every time the collection changes. Only write a specific named assertion when the user explicitly asks for a regression test on that exact value.
 
 ## Edge Cases
 
