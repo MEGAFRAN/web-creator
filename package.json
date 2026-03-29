@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "set-theme": "tsc --project tsconfig.scripts.json && node scripts/dist/scripts/set-theme.js"
   },
   "dependencies": {
     "next": "16.2.1",
