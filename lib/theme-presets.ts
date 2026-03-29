@@ -1,7 +1,8 @@
 import { createTheme } from "./theme-utils";
+import { defaultTheme } from "./theme";
 import type { Theme } from "./theme";
 
-export const minimalist: Theme = {
+export const minimalist: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#000000",
     primaryFg: "#ffffff",
@@ -30,9 +31,9 @@ export const minimalist: Theme = {
     lg: "0.375rem",
     full: "9999px",
   },
-};
+});
 
-export const modern: Theme = {
+export const modern: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#6366f1",
     primaryFg: "#ffffff",
@@ -51,19 +52,15 @@ export const modern: Theme = {
     fontWeightBody: "400",
     lineHeightBase: "1.6",
   },
-  spacing: {
-    containerMaxWidth: "72rem",
-    sectionPaddingY: "5rem",
-  },
   borderRadius: {
     sm: "0.375rem",
     md: "0.5rem",
     lg: "1rem",
     full: "9999px",
   },
-};
+});
 
-export const yellowBlack: Theme = createTheme(undefined, {
+export const yellowBlack: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#facc15",      // yellow-400 — the signature accent
     primaryFg: "#000000",    // black text on yellow buttons
@@ -82,10 +79,6 @@ export const yellowBlack: Theme = createTheme(undefined, {
     fontWeightBody: "400",
     lineHeightBase: "1.5",
   },
-  spacing: {
-    containerMaxWidth: "72rem",
-    sectionPaddingY: "5rem",
-  },
   borderRadius: {
     sm: "0.25rem",
     md: "0.375rem",
@@ -94,7 +87,7 @@ export const yellowBlack: Theme = createTheme(undefined, {
   },
 });
 
-export const professional: Theme = {
+export const professional: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#1d4ed8",
     primaryFg: "#ffffff",
@@ -113,19 +106,15 @@ export const professional: Theme = {
     fontWeightBody: "400",
     lineHeightBase: "1.5",
   },
-  spacing: {
-    containerMaxWidth: "72rem",
-    sectionPaddingY: "5rem",
-  },
   borderRadius: {
     sm: "0.25rem",
     md: "0.375rem",
     lg: "0.5rem",
     full: "9999px",
   },
-};
+});
 
-export const warmEarth: Theme = {
+export const warmEarth: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#c2500f",
     primaryFg: "#ffffff",
@@ -154,9 +143,9 @@ export const warmEarth: Theme = {
     lg: "1rem",
     full: "9999px",
   },
-};
+});
 
-export const midnightJewel: Theme = {
+export const midnightJewel: Theme = createTheme(defaultTheme, {
   colors: {
     primary: "#10b981",
     primaryFg: "#ffffff",
@@ -185,7 +174,7 @@ export const midnightJewel: Theme = {
     lg: "1.25rem",
     full: "9999px",
   },
-};
+});
 
 export const presets: Record<string, Theme> = {
   minimalist,

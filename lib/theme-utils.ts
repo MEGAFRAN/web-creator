@@ -57,7 +57,7 @@ export type ThemeSlices = {
  * This is intentionally kept narrow — it only handles plain objects (no
  * arrays, no class instances) which is sufficient for Theme slices.
  */
-function deepMergeObjects<T extends Record<string, unknown>>(
+export function deepMergeObjects<T extends Record<string, unknown>>(
   base: T,
   override: Partial<T>
 ): T {

@@ -10,6 +10,6 @@
     "rootDir": ".",
     "resolveJsonModule": true
   },
-  "include": ["scripts/**/*.ts", "lib/theme-presets.ts", "lib/theme.ts"],
+  "include": ["scripts/**/*.ts", "lib/theme-presets.ts", "lib/theme.ts", "lib/theme-utils.ts"],
   "exclude": ["node_modules"]
 }

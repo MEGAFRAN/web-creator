@@ -2,38 +2,12 @@ import fs from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 import type { Theme } from "@/lib/theme";
+import { deepMergeObjects } from "@/lib/theme-utils";
 
 const themePath = path.join(process.cwd(), "lib", "theme.json");
 
 function readTheme(): Theme {
   return JSON.parse(fs.readFileSync(themePath, "utf-8")) as Theme;
-}
-
-function deepMerge<T extends Record<string, unknown>>(
-  base: T,
-  override: Partial<T>
-): T {
-  const result = { ...base };
-  for (const key in override) {
-    const overrideVal = override[key];
-    const baseVal = base[key];
-    if (
-      overrideVal !== null &&
-      typeof overrideVal === "object" &&
-      !Array.isArray(overrideVal) &&
-      baseVal !== null &&
-      typeof baseVal === "object" &&
-      !Array.isArray(baseVal)
-    ) {
-      result[key] = deepMerge(
-        baseVal as Record<string, unknown>,
-        overrideVal as Record<string, unknown>
-      ) as T[typeof key];
-    } else if (overrideVal !== undefined) {
-      result[key] = overrideVal as T[typeof key];
-    }
-  }
-  return result;
 }
 
 export async function GET(): Promise<NextResponse> {
@@ -57,7 +31,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     }
 
     const current = readTheme();
-    const merged = deepMerge(
+    const merged = deepMergeObjects(
       current as unknown as Record<string, unknown>,
       body as Record<string, unknown>
     ) as unknown as Theme;
