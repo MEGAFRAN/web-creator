@@ -62,20 +62,20 @@ export const modern: Theme = createTheme(defaultTheme, {
 
 export const yellowBlack: Theme = createTheme(defaultTheme, {
   colors: {
-    primary: "#facc15",      // yellow-400 — the signature accent
-    primaryFg: "#000000",    // black text on yellow buttons
-    background: "#000000",   // pure black
-    foreground: "#ffffff",   // white body text
-    muted: "#a3a3a3",        // neutral-400 — readable on black
-    mutedBg: "#171717",      // neutral-900 — subtle surface
-    border: "#713f12",       // amber-900 — yellow-tinted border
-    destructive: "#ef4444",  // red-500
+    primary: "#facc15",      
+    primaryFg: "#000000",    
+    background: "#000000",
+    foreground: "#ffffff",
+    muted: "#a3a3a3",
+    mutedBg: "#171717",
+    border: "#713f12",
+    destructive: "#ef4444",
     destructiveFg: "#ffffff",
   },
   typography: {
     fontFamily: "var(--font-geist-sans), Arial Black, sans-serif",
     fontSizeBase: "1rem",
-    fontWeightHeading: "900", // ultra-bold for the striking feel
+    fontWeightHeading: "900",
     fontWeightBody: "400",
     lineHeightBase: "1.5",
   },

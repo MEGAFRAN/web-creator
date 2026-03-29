@@ -147,4 +147,48 @@ You can also edit `lib/theme.json` by hand and refresh the page:
 
 ## Adding a new preset
 
-Add a new named export to `lib/theme-presets.ts` and register it in the `presets` map at the bottom of the file. The shape must match the `Theme` type from `lib/theme.ts`.
+Use `createTheme` from `lib/theme-utils.ts` — never write raw theme object literals.
+
+`createTheme(base?, overrides?)` accepts an optional base preset and optional slice overrides. Only pass the slices that actually differ from the base.
+
+```ts
+import { createTheme } from "./theme-utils"
+import { defaultTheme } from "./theme"
+import { modernPreset } from "./theme-presets"
+
+// Full custom theme (only pass slices that differ from defaultTheme)
+export const myTheme = createTheme(defaultTheme, {
+  colors: {
+    primary: "#7c3aed",
+    primaryFg: "#ffffff",
+    background: "#0f0f0f",
+    foreground: "#f5f5f5",
+    muted: "#a3a3a3",
+    mutedBg: "#1a1a1a",
+    border: "#2e2e2e",
+    destructive: "#ef4444",
+    destructiveFg: "#ffffff",
+  },
+})
+
+// Variant of an existing preset — only override what changes
+export const modernPurple = createTheme(modernPreset, {
+  colors: { primary: "#7c3aed", primaryFg: "#ffffff" },
+})
+```
+
+Then register it in the `presets` map at the bottom of `lib/theme-presets.ts` so `npm run set-theme` can apply it:
+
+```ts
+export const presets: Record<string, Theme> = {
+  // ...existing presets
+  myTheme,
+  modernPurple,
+}
+```
+
+To activate the new preset, write its resolved value to `lib/theme.json` or run:
+
+```bash
+npm run set-theme myTheme
+```
