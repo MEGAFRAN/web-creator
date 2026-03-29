@@ -1,7 +1,7 @@
+import { Button } from "@/components/inputs/Button";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi } from "vitest";
-import { Button } from "../Button";
 
 describe("Button", () => {
   it("renders the label", () => {
